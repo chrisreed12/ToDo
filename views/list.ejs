@@ -1,0 +1,24 @@
+<%- include('header') -%> 
+<body>
+    <div class="box" id="heading">
+        <h1><%= listTitle %> List</h1>
+    </div>
+    <div class="date">
+        <h2><%= day %></h2>
+    </div>
+    <div class="box">
+        <form class="item" action="<%= postRoute %>" method="post">
+            <input type="text" name="addTodo" placeholder="New ToDo" autocomplete="off">
+            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+        </form>
+    </div>
+    <div class="box">
+        
+        <% for(var i = 0; i < todos.length; i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= todos[i] %></p>
+            </div>
+        <% } %>
+    </div>
+<%- include('footer')  -%> 
