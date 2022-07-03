@@ -18,6 +18,37 @@ h1 {
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.btn-group {
+  max-width: 400px;
+  margin: 25px auto;
+  background: transparent;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#nav {
+  display: inline-flex;
+  width: 44%;
+  border-radius: 0;
+  font-size: 1.5em;
+  padding: 10px;
+  background: #A683E3;
+  color: white;
+  text-align: center;
+}
+
+a:link#nav { text-decoration: none; }
+
+a:visited#nav { text-decoration: none; }
+
+a:active#nav { text-decoration: none; }
+
+a:hover#nav  {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+
 .date {
   max-width: 400px;
   margin: 15px auto;
