@@ -6,13 +6,7 @@ const app = express();
 
 let todos = [];
 let workTodos = [];
-const today = new Date();
-const options = {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long'
-}
-const day = today.toLocaleDateString('en-US', options);
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
