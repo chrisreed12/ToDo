@@ -3,10 +3,11 @@ const parser = require('body-parser');
 const bodyParser = require('body-parser');
 const { application } = require('express');
 const app = express();
+const date = require(__dirname+"/date.js");
 
 let todos = [];
 let workTodos = [];
-
+let day = date();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
