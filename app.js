@@ -5,9 +5,9 @@ const { application } = require('express');
 const app = express();
 const date = require(__dirname+"/date.js");
 
-let todos = [];
-let workTodos = [];
-let day = date();
+const todos = [];
+const workTodos = [];
+const day = date.getDay();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
