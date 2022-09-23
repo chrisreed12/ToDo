@@ -2,26 +2,22 @@
     <div class="box" id="heading">
         <h1><%= listTitle %> List</h1>
     </div>
-    <div class="date">
-        <h2><%= day %></h2>
-    </div>
-    <div class="btn-group">
-        <a href="/" id="nav">Home</a>
-        <a href="/work" id="nav">Work</a>
-    </div>
+
     <div class="box">
-        <form class="item" action="<%= postRoute %>" method="post">
+        <form class="item" action="/" method="post">
             <input type="text" name="addTodo" placeholder="New ToDo" autocomplete="off">
             <button type="submit" name="list" value="<%= listTitle %>">+</button>
         </form>
     </div>
     <div class="box">
-        
-        <% for(var i = 0; i < todos.length; i++){ %>
-            <div class="item">
-                <input type="checkbox">
-                <p><%= todos[i] %></p>
-            </div>
-        <% } %>
+        <% todos.forEach((todo) => { %>
+            <form action="/delete" method="post">
+                <div class="item" id="<%= todo._id %>">
+                    <input type="checkbox" name="checkbox" value="<%= todo._id %>" onChange="this.form.submit()">
+                    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+                    <p><%= todo.name %></p>
+                </div>
+            </form>
+        <% }); %>
     </div>
 <%- include('footer')  -%> 
